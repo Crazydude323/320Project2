@@ -21,10 +21,10 @@ export default function Fortune(props) {
   return (
     <div>
       <CrystalBall fortuneGen={fortuneGenerate} />
-      <div>
+      <div id="message">
         <p>
-          {fortBeg}
-          {fortMid}
+          {fortBeg + " "}
+          {fortMid + " "}
           {fortEnd}
         </p>
       </div>
@@ -34,8 +34,12 @@ export default function Fortune(props) {
   //adds the text for the fortunes to the screen.
   //Right now it will always fetch element 0 of the text array, but in future it will use Math.random() to randomize the text displayed.
   function fortuneGenerate() {
-    setFortBeg(fortunes[0].text[0]);
-    setFortMid(fortunes[1].text[0]);
-    setFortEnd(fortunes[2].text[0]);
+    setFortBeg(fortunes[0].text[getRandomInt(3)]);
+    setFortMid(fortunes[1].text[getRandomInt(3)]);
+    setFortEnd(fortunes[2].text[getRandomInt(3)]);
+  }
+
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
   }
 }

@@ -2,16 +2,20 @@
   {
     "id": 0,
     "type": "Beginning",
-    "text": ["Test1"]
+    "text": ["You", "Someone close to you", "Your most loved"]
   },
   {
     "id": 1,
     "type": "Middle",
-    "text": ["Test2"]
+    "text": ["will meet with", "should avoid", "must prepare for"]
   },
   {
     "id": 2,
     "type": "End",
-    "text": ["Test3"]
+    "text": [
+      "a handsome stranger.",
+      "an unfortunate end.",
+      "a long lost friend."
+    ]
   }
 ]

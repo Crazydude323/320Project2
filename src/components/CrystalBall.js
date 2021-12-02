@@ -9,8 +9,8 @@ export default function CrystalBall(props) {
         props.fortuneGen();
       }}
     >
-      <svg width="100" height="100">
-        <circle cx="50" cy="50" r="50" fill="#D4F4F2" />
+      <svg width="200" height="200">
+        <circle cx="100" cy="100" r="100" fill="#D4F4F2" />
       </svg>
     </div>
   );
