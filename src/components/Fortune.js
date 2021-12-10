@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { gsap } from "gsap";
 import CrystalBall from "./CrystalBall";
+import Cloud from "./Cloud";
 
 export default function Fortune(props) {
   //states to hold current fortune pieces, and the fortune JSON data
@@ -7,6 +9,9 @@ export default function Fortune(props) {
   const [fortBeg, setFortBeg] = useState("");
   const [fortMid, setFortMid] = useState("");
   const [fortEnd, setFortEnd] = useState("");
+
+  const leftRef = useRef(null);
+  const rightRef = useRef(null);
 
   //fetches JSON data
   useEffect(() => {
@@ -20,7 +25,10 @@ export default function Fortune(props) {
   //returns the three text pieces, initially displaying nothing, and the crystal ball image. Passes the fortuneGenerate up to the ball object
   return (
     <div>
-      <CrystalBall fortuneGen={fortuneGenerate} />
+      <CrystalBall
+        fortuneGen={fortuneGenerate}
+        cloudPart={cloudAnimationPart}
+      />
       <div id="message">
         <p>
           {fortBeg + " "}
@@ -28,6 +36,8 @@ export default function Fortune(props) {
           {fortEnd}
         </p>
       </div>
+      <Cloud cloudX="45" cloudRef={leftRef} />
+      <Cloud cloudX="70" cloudRef={rightRef} />
     </div>
   );
 
@@ -41,5 +51,10 @@ export default function Fortune(props) {
 
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
+  }
+
+  function cloudAnimationPart(cloudLX, cloudRX) {
+    gsap.to(leftRef.current, { x: cloudLX });
+    gsap.to(rightRef.current, { x: cloudRX });
   }
 }

@@ -7,6 +7,8 @@ export default function CrystalBall(props) {
     <div
       onClick={() => {
         props.fortuneGen();
+        // props.cloudPart("CloudRight");
+        props.cloudPart(-250, 250);
       }}
     >
       <svg width="200" height="200">

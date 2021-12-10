@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../styles.css";
 
 export default function Cloud(props) {
   return (
     <div>
       <div
-        id="cloud-circle"
-        style={{ boxShadow: `${400}px 400px 60px 0px #fff` }}
+        className="cloud-circle"
+        style={{ boxShadow: `${props.cloudX}vw 450px 60px 0px #fff` }}
+        ref={props.cloudRef}
       ></div>
       <svg width="0" height="0">
         <filter id="filter">
