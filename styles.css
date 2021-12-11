@@ -1,0 +1,25 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.body {
+  background-color: purple;
+}
+
+.cloud-circle {
+  width: 500px;
+  height: 275px;
+  border-radius: 50%;
+  filter: url(#filter);
+  position: absolute;
+  top: -320px;
+  left: -320px;
+}
+
+#message {
+  border: 2px solid blueviolet;
+  background-color: lavender;
+  margin: 0 auto;
+  width: 300px;
+}
