@@ -2,12 +2,28 @@
   {
     "id": 0,
     "type": "Beginning",
-    "text": ["You", "Someone close to you", "Your most loved"]
+    "text": [
+      "You",
+      "Someone close to you",
+      "Your most loved",
+      "Something you own",
+      "Your superior",
+      "Everyone you know",
+      "Your family"
+    ]
   },
   {
     "id": 1,
     "type": "Middle",
-    "text": ["will meet with", "should avoid", "must prepare for"]
+    "text": [
+      "will meet with",
+      "should avoid",
+      "must prepare for",
+      "will have need of",
+      "must carefully consider",
+      "need not look deeply into",
+      "ought to consider"
+    ]
   },
   {
     "id": 2,
@@ -15,7 +31,11 @@
     "text": [
       "a handsome stranger.",
       "an unfortunate end.",
-      "a long lost friend."
+      "a long lost friend.",
+      "an orb to ponder.",
+      "a generous gift",
+      "the future.",
+      "your work."
     ]
   }
 ]
