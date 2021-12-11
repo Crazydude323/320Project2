@@ -7,12 +7,13 @@ export default function CrystalBall(props) {
     <div
       onClick={() => {
         props.fortuneGen();
-        // props.cloudPart("CloudRight");
         props.cloudPart(-250, 250);
       }}
     >
+      {/* Creating the crystal ball & glint */}
       <svg width="200" height="200">
         <circle cx="100" cy="100" r="100" fill="#D4F4F2" />
+        <path d="M 10 100 Q 20 20 100 10 Z" fill="white" />
       </svg>
     </div>
   );

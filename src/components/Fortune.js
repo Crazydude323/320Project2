@@ -9,7 +9,7 @@ export default function Fortune(props) {
   const [fortBeg, setFortBeg] = useState("");
   const [fortMid, setFortMid] = useState("");
   const [fortEnd, setFortEnd] = useState("");
-
+  //States to hold the clouds apart
   const leftRef = useRef(null);
   const rightRef = useRef(null);
 
@@ -30,6 +30,7 @@ export default function Fortune(props) {
         cloudPart={cloudAnimationPart}
       />
       <div id="message">
+        {/* fetch JSON text message in one from three parts */}
         <p>
           {fortBeg + " "}
           {fortMid + " "}
@@ -44,15 +45,16 @@ export default function Fortune(props) {
   //adds the text for the fortunes to the screen.
   //Right now it will always fetch element 0 of the text array, but in future it will use Math.random() to randomize the text displayed.
   function fortuneGenerate() {
-    setFortBeg(fortunes[0].text[getRandomInt(3)]);
-    setFortMid(fortunes[1].text[getRandomInt(3)]);
-    setFortEnd(fortunes[2].text[getRandomInt(3)]);
+    setFortBeg(fortunes[0].text[getRandomInt(7)]);
+    setFortMid(fortunes[1].text[getRandomInt(7)]);
+    setFortEnd(fortunes[2].text[getRandomInt(7)]);
   }
-
+  //Retrieves random messages
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
 
+  //this animation pull the clouds apart to show the text message
   function cloudAnimationPart(cloudLX, cloudRX) {
     gsap.to(leftRef.current, { x: cloudLX });
     gsap.to(rightRef.current, { x: cloudRX });
